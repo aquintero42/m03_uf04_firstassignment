@@ -23,25 +23,31 @@ public class CuentaCorriente {
     
     // Getters/Setters
 
+    // La propiedad saldo es de solo lectura read/only
     public double getSaldo() {
         return saldo;
     }
     
     
-    // Métodos heredados
+    // Métodos heredados de la clase Object
     @Override    
     public String toString() {
-        return "CuentaCorriente{" + "titular=" + titular + ", saldo=" + saldo + '}';
+        return "CuentaCorriente: " + "Titular = " + titular + ", Saldo = " + saldo;
     }
 
     // Métodos adicionales
     
-    /* El método ingresa acumula ingreso en saldo */
-    public void ingresa(double ingreso) {
+    /* El método ingresa acumula ingreso en saldo siempre que ingreso sea positivo
+    y que en cualquier otro caso lance una excepción
+    */
+    public void ingresa(double ingreso) throws Exception {
+        if (ingreso <= 0) throw new Exception("Ingreso no puede ser negativo");
+        saldo += ingreso;
     }
     
-    /* El método abona resta abono de saldo */ 
-    public void abona(double abono) {
-        
+    /* El método abona resta abono de saldo siempre y cuando sea menor que salgo*/ 
+    public void abona(double abono) throws Exception {
+        if (saldo < abono) throw new Exception("Saldo insuficiente");
+        saldo -= abono;
     }
 }

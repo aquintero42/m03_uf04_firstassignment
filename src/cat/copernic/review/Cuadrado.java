@@ -7,14 +7,14 @@ package cat.copernic.review;
 
 /**
  *
- * @author pep
+ * @author Adrian
  */
 public class Cuadrado {
     
     private double lado;
 
     public Cuadrado(double lado) throws Exception {
-        if (lado <= 0) throw new Exception("El lado tiene que ser positivo: " + lado);
+        if (lado <= 0) throw new Exception("El lado tiene que ser positivo" + lado);
         this.lado = lado;
     }
 
@@ -28,19 +28,17 @@ public class Cuadrado {
 
     @Override
     public String toString() {
-        return "Cuadrado{" + "lado=" + lado + '}';
+        return "Cuadrado: " + "Lado = " + lado;
     }
-    
-
-    // devuelve el area de este cuadrado lado * lado
+   
+    // Devuelve el area de este cuadrado lado*lado
     public double area() {
-        return Math.pow(lado, 2.0); // lado * lado
+        return Math.pow(lado,2.0);
     }
     
-    // devuelve el valor del perimetro de este cuadrado 4 * lado
+    // Devuelve el valor del perimetro de este cuadrado 4 * lado
     public double perimetro() {
-        return 4 * lado;
+        return lado*4.0;
     }
-    
     
 }

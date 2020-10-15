@@ -49,7 +49,7 @@ public class CuentaCorrienteTest {
      */
     @Test
     public void testIngresa() {
-        instance.ingresa(175.0);
+        //instance.ingresa(175.0);
         assertEquals(1_175.0, instance.getSaldo(), 1.0E-3);
         
     }
@@ -59,7 +59,7 @@ public class CuentaCorrienteTest {
      */
     @Test
     public void testAbona() {
-       instance.abona(275.50);
+       //instance.abona(275.50);
         assertEquals(724.50, instance.getSaldo(), 1.0E-3);
     }
     
