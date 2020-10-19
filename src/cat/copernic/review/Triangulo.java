@@ -15,7 +15,7 @@ public class Triangulo {
     private double altura;
 
     public Triangulo(double base, double altura) throws Exception {
-        if (base <= 0) throw new Exception("La base tiene que ser positiva: " + base);
+        if (base <= 0) throw new ParametroNoPositivoException("La base tiene que ser positiva: " + base);
         this.base = base;
         if (altura <= 0) throw new Exception("La altura tiene que ser positiva: " + altura);
         this.altura = altura;
@@ -52,7 +52,7 @@ public class Triangulo {
     }
     
     public double calcHipotenusa() {
-        return Math.sqrt( Math.pow(base, 2) + Math.pow(altura, 2));
+        return Math.sqrt( Math.pow(base / 2, 2.0) + Math.pow(altura, 2.0));
     }
     
 }
